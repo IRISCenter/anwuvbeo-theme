@@ -1,0 +1,37 @@
+{
+  "name": "anwuvbeo",
+  "version": "0.1.0",
+  "description": "A theme for the Schaefer Edoid Archive.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IRISCenter/anwuvbeo-theme"
+  },
+  "keywords": [
+    "omeka-s",
+    "theme"
+  ],
+  "author": "Southern Illinois University Edwardsville's Interdisciplinary Research and Informatics Scholarship Center",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/IRISCenter/anwuvbeo-theme/issues"
+  },
+  "homepage": "https://github.com/IRISCenter/anwuvbeo-theme#readme",
+  "devDependencies": {
+    "autoprefixer": "^9.2.1",
+    "gulp": "^4.0.2",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2"
+  },
+  "browserslist": [
+    "> 5%",
+    "> 1% in US"
+  ],
+  "dependencies": {
+    "foundation-sites": "^6.6.3",
+    "minimist": "^1.2.5"
+  }
+}
