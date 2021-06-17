@@ -9,7 +9,7 @@ gulp.task('css', function () {
 
     return gulp.src('./asset/sass/*.scss')
         .pipe(sass({
-            outputStyle: 'compressed',
+            outputStyle: 'nested',
             includePaths: ['node_modules/foundation-sites/scss']
         }).on('error', sass.logError))
         .pipe(postcss([
