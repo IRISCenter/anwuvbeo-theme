@@ -2,10 +2,27 @@
 
 @import "foundation";
 
-@include foundation-everything;
+@include foundation-everything(true);
 
 @media screen {
     @import "screen";
+
+    header {
+
+        background-color: map-get($schaefer-palette, "dark-violet");
+
+        margin-bottom: 3rem;
+
+        .top-bar {
+
+            color: map-get($schaefer-palette, "pale-yellow");
+
+            a { color: map-get($schaefer-palette, "pale-yellow"); }
+
+        }
+
+    }
+
 }
 
 @media screen and (min-width:800px) {

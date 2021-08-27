@@ -48,9 +48,15 @@ $userBar = $this->userBar();
 
         <header>
 
-            <div class="top-bar">
+            <div class="top-bar grid-container">
 
                 <div class="top-bar-left">
+
+                    <img src="<?php echo $this->assetUrl('image/logo-dark-background.svg'); ?>">
+
+                </div>
+
+                <!-- <div class="top-bar-left">
 
                     <ul class="menu">
 
@@ -66,7 +72,7 @@ $userBar = $this->userBar();
 
                     </ul>
 
-                </div>
+                </div> -->
 
                 <div class="top-bar-right">
 
@@ -79,6 +85,8 @@ $userBar = $this->userBar();
             </div>
 
         </header>
+
+        <div class="grid-container">
 
         <div class="grid-x grid-padding-x">
 
@@ -105,12 +113,12 @@ $userBar = $this->userBar();
                 <footer>
                     <?php if ($footerContent = $this->themeSetting('footer')): ?>
                     <?php echo $footerContent; ?>
-                    <?php else: ?>
-                        <?php echo $this->translate('Powered by Omeka S'); ?>
                     <?php endif; ?>
                 </footer>
 
             </div>
+
+        </div>
 
         </div>
 
