@@ -15,30 +15,25 @@ $this->jsTranslate();
 $this->trigger('view.layout');
 $userBar = $this->userBar();
 ?>
+
 <?php echo $this->doctype(); ?>
+
 <?php echo $this->htmlElement('html'); ?>
+
     <head>
+
         <?php echo $this->headMeta(); ?>
         <?php echo $this->headTitle(); ?>
+
         <?php echo $this->headLink(); ?>
+
         <?php echo $this->headStyle(); ?>
+
         <?php echo $this->headScript(); ?>
 
-        <style>
-            <?php if ($accentColor = $this->themeSetting('accent_color')): ?>
-            a:link,
-            a:visited {
-                color: <?php echo $accentColor; ?>
-            }
-
-            a:active,
-            a:hover {
-                color: <?php echo $accentColor; ?>;
-                opacity: .75;
-            }
-            <?php endif; ?>
-        </style>
     </head>
+
+
 
     <?php echo $this->htmlElement('body'); ?>
 
@@ -56,24 +51,6 @@ $userBar = $this->userBar();
 
                 </div>
 
-                <!-- <div class="top-bar-left">
-
-                    <ul class="menu">
-
-                        <li>
-                            <a href="<?php echo $site->url(); ?>" class="site-title">
-                            <?php if ($this->themeSetting('logo')): ?>
-                                <img src="<?php echo $this->themeSettingAssetUrl('logo'); ?>" alt="<?php echo $escape($siteTitle); ?>" />
-                            <?php else: ?>
-                                <?php echo $escape($siteTitle); ?>
-                            <?php endif; ?>
-                            </a>
-                        </li>
-
-                    </ul>
-
-                </div> -->
-
                 <div class="top-bar-right">
 
                     <div id="search">
@@ -86,39 +63,45 @@ $userBar = $this->userBar();
 
         </header>
 
+
+
         <div class="grid-container">
 
-        <div class="grid-x grid-padding-x">
+            <div class="grid-x grid-padding-x">
 
-            <div class="cell show-for-medium medium-3">
+                <!-- <div class="cell show-for-medium medium-3">
 
-                <nav>
-                <?php
-                echo $site->publicNav()->menu()->renderMenu(null, [
-                    'maxDepth' => $this->themeSetting('nav_depth') - 1
-                ]);
-                ?>
-                </nav>
+                    <nav>
+
+                        <?php
+                        // echo $site->publicNav()->menu()->renderMenu(null, [
+                        //     'maxDepth' => $this->themeSetting('nav_depth') - 1
+                        // ]);
+                        ?>
+
+                    </nav>
+
+                </div> -->
+
+                <div id="content" role="main" class="cell small-12">
+
+                    <?php echo $this->content; ?>
+
+                </div>
+
+                <div class="cell small-12">
+
+                    <footer>
+
+                        <?php if ($footerContent = $this->themeSetting('footer')): ?>
+                        <?php echo $footerContent; ?>
+                        <?php endif; ?>
+
+                    </footer>
+
+                </div>
 
             </div>
-
-            <div id="content" role="main" class="cell small-12 medium-9">
-
-                <?php echo $this->content; ?>
-
-            </div>
-
-            <div class="cell small-12">
-
-                <footer>
-                    <?php if ($footerContent = $this->themeSetting('footer')): ?>
-                    <?php echo $footerContent; ?>
-                    <?php endif; ?>
-                </footer>
-
-            </div>
-
-        </div>
 
         </div>
 
