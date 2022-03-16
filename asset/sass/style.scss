@@ -6,8 +6,23 @@
 
 @include foundation-everything(true);
 
+dd {
+    margin-bottom: 0.5rem;
+}
+
+.two-column-list {
+    column-count: 2;
+}
+
 @media screen {
+
     @import "screen";
+
+    .item.resource.show .property-list .dl-def:hover {
+
+        background-color: rgba($color: #000000, $alpha: 0.1);
+
+    }
 
     header {
 
