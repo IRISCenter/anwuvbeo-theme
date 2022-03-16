@@ -10,15 +10,15 @@ dd {
     margin-bottom: 0.5rem;
 }
 
-.two-column-list {
+.t-two-column-list {
     column-count: 2;
 }
 
-.copy-button {
+.t-copy-button {
     visibility: hidden;
 }
 
-.cropped-preview-notice {
+.t-cropped-preview-notice {
     position: absolute;
     padding: 0.5em;
     background-color: map-get($schaefer-palette, 'dark-violet');
@@ -34,7 +34,7 @@ dd {
 
         background-color: rgba($color: #000000, $alpha: 0.1);
 
-        .copy-button {
+        .t-copy-button {
             visibility: visible;
         }
 
