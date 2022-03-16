@@ -48,6 +48,52 @@ dd {
 
     }
 
+    nav.pagination {
+
+        padding: 2em;
+
+        background-color: map-get($schaefer-palette, 'gold-yellow');
+
+        input.page-input-top {
+
+            display: inline-block;
+            width: 3em;
+
+        }
+
+        form { display: inline-block; }
+
+    }
+
+    form.sorting {
+
+        padding: 2em;
+
+        background-color: map-get($schaefer-palette, 'gold-yellow');
+
+    }
+
+    body.browse.item-set {
+
+        ul.resource-list {
+
+            margin-left: 0;
+
+            list-style-type: none;
+
+            li {
+
+                display: inline-block;
+                padding: 1em;
+
+                background-color: map-get($schaefer-palette, 'gold-yellow');
+
+            }
+
+        }
+
+    }
+
 }
 
 @media screen and (min-width:800px) {
