@@ -21,17 +21,17 @@
   },
   "homepage": "https://github.com/IRISCenter/anwuvbeo-theme#readme",
   "devDependencies": {
-    "autoprefixer": "^9.2.1",
+    "autoprefixer": "^9.8.8",
     "gulp": "^4.0.2",
     "gulp-postcss": "^8.0.0",
-    "gulp-sass": "^4.0.2"
+    "gulp-sass": "^4.1.1"
   },
   "browserslist": [
     "> 5%",
     "> 1% in US"
   ],
   "dependencies": {
-    "foundation-sites": "^6.6.3",
+    "foundation-sites": "^6.7.4",
     "minimist": "^1.2.5"
   }
 }
