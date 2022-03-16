@@ -67,9 +67,10 @@
 // ---------
 
 $schaefer-palette: (
-    dark-violet: #422a4a,
-    pale-violet: #d6d1e5,
-    pale-yellow: #f8e59f,
+    dark-violet: #451d47,
+    pale-violet: #975068,
+    pale-yellow: #fbf1c3,
+    gold-yellow: #e29239,
 );
 
 // 1. Global
@@ -79,7 +80,7 @@ $global-font-size: 100%;
 $global-width: rem-calc(1200);
 $global-lineheight: 1.5;
 $foundation-palette: (
-  primary: #1779ba,
+  primary: map-get($schaefer-palette, 'dark-violet'),
   secondary: #767676,
   success: #3adb76,
   warning: #ffae00,
