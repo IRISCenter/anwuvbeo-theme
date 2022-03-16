@@ -8,7 +8,6 @@ $this->headTitle($siteTitle)->setSeparator(' · ');
 $this->headTitle()->append($this->setting('installation_title', 'Omeka S'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
-$this->headScript()->prependFile($this->assetUrl('js/default.js'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
 $this->jsTranslate();
@@ -104,6 +103,9 @@ $userBar = $this->userBar();
             </div>
 
         </div>
+
+        <script type="text/javascript" src="<?php print($this->assetUrl('js/clipboard.js')); ?>"></script>
+        <script type="text/javascript" src="<?php print($this->assetUrl('js/default.js')); ?>"></script>
 
     </body>
 
