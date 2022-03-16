@@ -14,6 +14,14 @@ dd {
     column-count: 2;
 }
 
+.cropped-preview-notice {
+    position: absolute;
+    padding: 0.5em;
+    background-color: map-get($schaefer-palette, 'dark-violet');
+    color: white;
+}
+
+
 @media screen {
 
     @import "screen";
