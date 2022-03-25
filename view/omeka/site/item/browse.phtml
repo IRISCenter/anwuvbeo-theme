@@ -1,12 +1,12 @@
 <?php
 $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
-$this->htmlElement('body')->appendAttribute('class', 'item resource browse');
+$this->htmlElement('body')->appendAttribute('class', 'o-item o-resource o-browse');
 
 $query = $this->params()->fromQuery();
 $itemSetShow = isset($itemSet);
 if ($itemSetShow):
-    $this->htmlElement('body')->appendAttribute('class', 'item-set');
+    $this->htmlElement('body')->appendAttribute('class', 'o-item-set');
     $query['item_set_id'] = $itemSet->id();
 endif;
 $sortHeadings = [
@@ -29,14 +29,14 @@ $sortHeadings = [
 ];
 ?>
 
-<div class="grid-x grid-padding-x">
+<div class="f-grid-x f-grid-padding-x">
 
-    <div class="cell small-12">
+    <div class="f-cell f-small-12">
 
         <?php if ($itemSetShow): ?>
             <?php echo $this->pageTitle($itemSet->displayTitle(), 2); ?>
-            <p class="lead"><?php echo $itemSet->value('dcterms:description'); ?></p>
-            <div class="item-set-items">
+            <p class="t-lead"><?php echo $itemSet->value('dcterms:description'); ?></p>
+            <div class="o-item-set-items">
         <?php else: ?>
             <?php echo $this->pageTitle($translate('Items'), 2); ?>
         <?php endif; ?>
@@ -45,7 +45,7 @@ $sortHeadings = [
 
         <?php echo $this->searchFilters(); ?>
 
-        <div class="browse-controls">
+        <div class="o-browse-controls">
             <?php echo $this->pagination(); ?>
             <?php // echo $this->hyperlink($translate('Advanced search'), $this->url('site/resource', ['controller' => 'item', 'action' => 'search'], ['query' => $query], true), ['class' => 'advanced-search']); ?>
             <?php echo $this->sortSelector($sortHeadings); ?>
@@ -54,7 +54,7 @@ $sortHeadings = [
 
 
         <?php $this->trigger('view.browse.before'); ?>
-        <ul class="resource-list grid-x grid-margin-x">
+        <ul class="o-resource-list f-grid-x f-grid-margin-x">
         <?php
         $headingTerm = $this->siteSetting('browse_heading_property_term');
         $bodyTerm = $this->siteSetting('browse_body_property_term');
@@ -62,13 +62,13 @@ $sortHeadings = [
             $heading = $headingTerm ? $item->value($headingTerm, ['default' => $translate('[Untitled]')]) : $item->displayTitle();
             $body = $bodyTerm ? $item->value($bodyTerm) : $item->displayDescription();
         ?>
-            <li class="item resource cell small-6 medium-4 large-3">
+            <li class="o-item o-resource f-cell f-small-6 f-medium-4 f-large-3">
                 <?php if ($itemThumbnail = $this->thumbnail($item, 'medium')): ?>
                 <?php echo $item->linkRaw($itemThumbnail); ?>
                 <?php endif; ?>
                 <h4><?php echo $item->link($heading); ?></h4>
                 <?php if ($body): ?>
-                <div class="description"><?php echo $escape($body); ?></div>
+                <div class="o-description"><?php echo $escape($body); ?></div>
                 <?php endif; ?>
             </li>
         <?php endforeach; ?>

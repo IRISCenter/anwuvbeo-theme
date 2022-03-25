@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,400;0,600;1,400;1,600&family=Oswald:wght@200&display=swap');
-
-@import "foundation-settings";
-
-@import "foundation";
-
-@include foundation-everything(true);
+$schaefer-palette: (
+    dark-violet: #451d47,
+    pale-violet: #975068,
+    pale-yellow: #fbf1c3,
+    gold-yellow: #e29239,
+);
 
 dd {
     margin-bottom: 0.5rem;
@@ -30,7 +29,7 @@ dd {
 
     @import "screen";
 
-    .item.resource.show .property-list .dl-def:hover {
+    .o-item.o-resource.o-show .o-property-list .t-dl-def:hover {
 
         background-color: rgba($color: #000000, $alpha: 0.1);
 
@@ -46,7 +45,7 @@ dd {
 
         margin-bottom: 3rem;
 
-        .top-bar {
+        .f-top-bar {
 
             color: map-get($schaefer-palette, "pale-yellow");
 
@@ -56,13 +55,13 @@ dd {
 
     }
 
-    nav.pagination {
+    nav.f-pagination {
 
         padding: 2em;
 
         background-color: map-get($schaefer-palette, 'gold-yellow');
 
-        input.page-input-top {
+        input.f-page-input-top {
 
             display: inline-block;
             width: 3em;
@@ -73,7 +72,7 @@ dd {
 
     }
 
-    form.sorting {
+    form.o-sorting {
 
         padding: 2em;
 
@@ -81,9 +80,9 @@ dd {
 
     }
 
-    body.browse.item-set {
+    body.o-browse.o-item-set {
 
-        ul.resource-list {
+        ul.o-resource-list {
 
             margin-left: 0;
 

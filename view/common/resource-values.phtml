@@ -13,29 +13,29 @@ $labelInfo = $this->setting('property_label_information');
         <?php echo $escape($translate($propertyData['property']->label())); ?>
         <?php endif; ?>
         <?php if ('term' === $labelInfo): ?>
-        <span class="field-term">(<?php echo $escape($propertyData['property']->term()); ?>)</span>
+        <span class="o-field-term">(<?php echo $escape($propertyData['property']->term()); ?>)</span>
         <?php elseif ('vocab' === $labelInfo): ?>
-        <span class="field-term">(<?php echo $escape($propertyData['property']->vocabulary()->label()); ?>)</span>
+        <span class="o-field-term">(<?php echo $escape($propertyData['property']->vocabulary()->label()); ?>)</span>
         <?php endif; ?>
     </dt>
     <dd>
         <?php foreach ($propertyData['values'] as $value): ?>
             <?php
             $valueType = $value->type();
-            $class = ['value'];
+            $class = ['o-value'];
             if ('resource' == $valueType || strpos($valueType, 'resource') !== false) {
-                $class[] = 'resource';
+                $class[] = 'o-resource';
                 $class[] = $escape($value->valueResource()->resourceName());
             } elseif ('uri' == $valueType) {
-                $class[] = 'uri';
+                $class[] = 'o-uri';
             }
             if (!$value->isPublic()) {
-                $class[] = 'private';
+                $class[] = 'o-private';
             }
             ?>
             <div class="<?php echo implode(' ', $class); ?>" lang="<?php echo $escape($value->lang()); ?>">
                 <?php if ($language = $value->lang()): ?>
-                <span class="language"><?php echo $language; ?></span>
+                <span class="o-language"><?php echo $language; ?></span>
                 <?php endif; ?>
                 <?php echo $value->asHtml(); ?>
             </div>

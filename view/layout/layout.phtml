@@ -6,7 +6,8 @@ $this->headMeta()->setCharset('utf-8');
 $this->headMeta()->appendName('viewport', 'width=device-width, initial-scale=1');
 $this->headTitle($siteTitle)->setSeparator(' · ');
 $this->headTitle()->append($this->setting('installation_title', 'Omeka S'));
-$this->headLink()->prependStylesheet($this->assetUrl('css/style.css'));
+$this->headLink()->prependStylesheet($this->assetUrl('css/framework.css'));
+$this->headLink()->prependStylesheet($this->assetUrl('css/theme.css'));
 $this->headLink()->prependStylesheet($this->assetUrl('css/iconfonts.css', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('js/global.js', 'Omeka'));
 $this->headScript()->prependFile($this->assetUrl('vendor/jquery/jquery.min.js', 'Omeka'));
@@ -36,23 +37,23 @@ $userBar = $this->userBar();
 
     <?php echo $this->htmlElement('body'); ?>
 
-        <a id="skipnav" class="show-for-sr" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
+        <a id="skipnav" class="f-show-for-sr" href="#content"><?php echo $this->translate('Skip to main content'); ?></a>
 
         <?php echo $userBar; ?>
 
         <header>
 
-            <div class="top-bar grid-container">
+            <div class="f-top-bar f-grid-container">
 
-                <div class="top-bar-left">
+                <div class="f-top-bar-left">
 
                     <img src="<?php echo $this->assetUrl('image/logo-dark-background.svg'); ?>">
 
                 </div>
 
-                <div class="top-bar-right">
+                <div class="f-top-bar-right">
 
-                    <div id="search">
+                    <div id="t-search">
                         <?php echo $this->partial('common/search-form'); ?>
                     </div>
 
@@ -64,9 +65,9 @@ $userBar = $this->userBar();
 
 
 
-        <div class="grid-container">
+        <div class="f-grid-container">
 
-            <div class="grid-x grid-padding-x">
+            <div class="f-grid-x f-grid-padding-x">
 
                 <!-- <div class="cell show-for-medium medium-3">
 
@@ -82,13 +83,13 @@ $userBar = $this->userBar();
 
                 </div> -->
 
-                <div id="content" role="main" class="cell small-12">
+                <div id="t-content" role="main" class="f-cell f-small-12">
 
                     <?php echo $this->content; ?>
 
                 </div>
 
-                <div class="cell small-12">
+                <div class="f-cell f-small-12">
 
                     <footer>
 

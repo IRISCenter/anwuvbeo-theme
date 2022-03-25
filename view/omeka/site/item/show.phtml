@@ -1,20 +1,20 @@
 <?php
 $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
-$this->htmlElement('body')->appendAttribute('class', 'item resource show');
+$this->htmlElement('body')->appendAttribute('class', 'o-item o-resource o-show');
 $itemMedia = $item->media();
 ?>
 
-<div class="grid-x grid-padding-x">
+<div class="f-grid-x f-grid-padding-x">
 
-    <div class="cell small-12 medium-6">
+    <div class="f-cell f-small-12 f-medium-6">
 
         <?php echo $this->pageTitle($item->displayTitle(), 1); ?>
 
-        <p class="lead"><?php echo $item->value('dcterms:description'); ?></p>
+        <p class="t-lead"><?php echo $item->value('dcterms:description'); ?></p>
 
         <?php if (count($itemMedia) == 1): ?>
-            <a class="button" href="<?php print($itemMedia[0]->originalUrl()); ?>">Download</a>
+            <a class="f-button" href="<?php print($itemMedia[0]->originalUrl()); ?>">Download</a>
         <?php else: ?>
             TODO: Handle multiple media items.
         <?php endif; ?>
@@ -23,67 +23,67 @@ $itemMedia = $item->media();
 
         <?php $this->trigger('view.show.before'); ?>
 
-        <dl class="property-list item-property-list t-two-column-list">
+        <dl class="o-property-list o-item-property-list t-two-column-list">
 
-            <div class="dl-def">
-                <dt>Subject <button type="button" class="button tiny hollow t-copy-button" data-clipboard-target=".subject-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="subject-property"><?php echo $item->value('dcterms:subject'); ?></dd>
+            <div class="t-dl-def">
+                <dt>Subject <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-subject-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
+                <dd class="t-subject-property"><?php echo $item->value('dcterms:subject'); ?></dd>
             </div>
 
-            <div class="dl-def">
-                <dt>Type <button type="button" class="button tiny hollow t-copy-button" data-clipboard-target=".type-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="type-property"><?php echo $item->value('dcterms:type'); ?></dd>
+            <div class="t-dl-def">
+                <dt>Type <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-type-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
+                <dd class="t-type-property"><?php echo $item->value('dcterms:type'); ?></dd>
             </div>
 
-            <div class="dl-def">
-                <dt>Format <button type="button" class="button tiny hollow t-copy-button" data-clipboard-target=".format-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="format-property"><?php echo $item->value('dcterms:format'); ?></dd>
+            <div class="t-dl-def">
+                <dt>Format <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-format-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
+                <dd class="t-format-property"><?php echo $item->value('dcterms:format'); ?></dd>
             </div>
 
-            <div class="dl-def">
-                <dt>Language <button type="button" class="button tiny hollow t-copy-button" data-clipboard-target=".language-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="language-property"><?php echo $item->value('dcterms:language'); ?></dd>
+            <div class="t-dl-def">
+                <dt>Language <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-language-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
+                <dd class="t-language-property"><?php echo $item->value('dcterms:language'); ?></dd>
             </div>
 
-            <div class="dl-def">
-                <dt>Coverage <button type="button" class="button tiny hollow t-copy-button" data-clipboard-target=".coverage-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="coverage-property"><?php echo $item->value('dcterms:coverage'); ?></dd>
+            <div class="t-dl-def">
+                <dt>Coverage <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-coverage-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
+                <dd class="t-coverage-property"><?php echo $item->value('dcterms:coverage'); ?></dd>
             </div>
 
-            <div class="dl-def">
-                <dt>Creator <button type="button" class="button tiny hollow t-copy-button" data-clipboard-target=".creator-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="creator-property"><?php echo $item->value('dcterms:creator'); ?></dd>
+            <div class="t-dl-def">
+                <dt>Creator <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-creator-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
+                <dd class="t-creator-property"><?php echo $item->value('dcterms:creator'); ?></dd>
             </div>
 
-            <div class="dl-def">
-                <dt>Rights <button type="button" class="button tiny hollow t-copy-button" data-clipboard-target=".rights-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="rights-property"><?php echo $item->value('dcterms:rights'); ?></dd>
+            <div class="t-dl-def">
+                <dt>Rights <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-rights-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
+                <dd class="t-rights-property"><?php echo $item->value('dcterms:rights'); ?></dd>
             </div>
 
-            <div class="dl-def">
-                <dt>Contributor <button type="button" class="button tiny hollow t-copy-button" data-clipboard-target=".contributor-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="contributor-property"><?php echo $item->value('dcterms:contributor'); ?></dd>
+            <div class="t-dl-def">
+                <dt>Contributor <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-contributor-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
+                <dd class="t-contributor-property"><?php echo $item->value('dcterms:contributor'); ?></dd>
             </div>
 
         </dl>
 
-        <div class="property">
+        <div class="o-property">
             <?php $itemSets = $item->itemSets(); ?>
             <?php if (count($itemSets) > 0): ?>
             <h2><?php echo $translate('Item sets'); ?></h2>
             <?php foreach ($itemSets as $itemSet): ?>
-            <div class="value"><a href="<?php echo $escape($itemSet->url()); ?>"><?php echo $itemSet->displayTitle(); ?></a></div>
+            <div class="o-value"><a href="<?php echo $escape($itemSet->url()); ?>"><?php echo $itemSet->displayTitle(); ?></a></div>
             <?php endforeach; ?>
             <?php endif; ?>
         </div>
 
         <?php if (($this->siteSetting('show_attached_pages', true)) && ($sitePages = $item->sitePages($site->id()))): ?>
 
-        <div class="property">
+        <div class="o-property">
             <h2><?php echo $translate('Site pages'); ?></h2>
-            <div class="values">
+            <div class="o-values">
                 <?php foreach ($sitePages as $sitePage): ?>
-                <div class="value"><?php echo $sitePage->link($sitePage->title()); ?></div>
+                <div class="o-value"><?php echo $sitePage->link($sitePage->title()); ?></div>
                 <?php endforeach; ?>
             </div>
         </div>
@@ -97,7 +97,7 @@ $itemMedia = $item->media();
         ?>
 
         <?php if ($subjectValues): ?>
-        <div id="item-linked">
+        <div id="o-item-linked">
             <h2><?php echo $translate('Linked resources'); ?></h2>
             <?php echo $subjectValues; ?>
         </div>
@@ -107,17 +107,17 @@ $itemMedia = $item->media();
 
     </div>
 
-    <div class="cell small-12 medium-6">
+    <div class="f-cell f-small-12 f-medium-6">
 
         <?php if ($itemMedia[0]->mediaType() == 'application/pdf'): ?>
 
-        <div class='item-preview document-item-preview'>
+        <div class='t-item-preview t-document-item-preview'>
             <?php echo $this->thumbnail($item, 'large', ['alt' => 'An image of the item.']); ?>
         </div>
 
         <?php elseif ($itemMedia[0]->mediaType() == 'image/jpeg'): ?>
 
-        <div class='item-preview image-item-preview'>
+        <div class='t-item-preview t-image-item-preview'>
 
             <?php
                 // var_dump($itemMedia[0]->id());
@@ -148,7 +148,7 @@ $itemMedia = $item->media();
 </div>
 
 <?php if (count($itemMedia) > 1): ?>
-<div class="media-list">
+<div class="o-media-list">
     <h2><?php echo $translate('Available media'); ?></h2>
     <?php foreach ($itemMedia as $media): ?>
         <?php echo $media->linkPretty(); ?>

@@ -2,7 +2,7 @@
 $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
 ?>
-<form class="sorting" action="">
+<form class="o-sorting" action="">
     <?php echo $this->queryToHiddenInputs(['sort_by', 'sort_order']); ?>
     <select name="sort_by" aria-label="<?php echo $translate('Sort by'); ?>">
     <?php foreach($sortBy as $sortByHeading): ?>
@@ -14,5 +14,5 @@ $escape = $this->plugin('escapeHtml');
         <option value="asc" <?php echo ($sortOrderQuery === 'asc') ? 'selected' : ''; ?>><?php echo $translate('Ascending'); ?></option>
         <option value="desc" <?php echo ($sortOrderQuery === 'desc') ? 'selected' : ''; ?>><?php echo $translate('Descending'); ?></option>
     </select>
-    <button type="submit" class="button"><?php echo $translate('Sort'); ?></button>
+    <button type="submit" class="f-button"><?php echo $translate('Sort'); ?></button>
 </form>
