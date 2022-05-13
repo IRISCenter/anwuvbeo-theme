@@ -2,17 +2,39 @@
 $translate = $this->plugin('translate');
 $escape = $this->plugin('escapeHtml');
 ?>
-<form class="o-sorting" action="">
-    <?php echo $this->queryToHiddenInputs(['sort_by', 'sort_order']); ?>
-    <select name="sort_by" aria-label="<?php echo $translate('Sort by'); ?>">
-    <?php foreach($sortBy as $sortByHeading): ?>
-        <?php $selected = ($sortByQuery === $sortByHeading['value']) ? 'selected' : ''; ?>
-        <option value="<?php echo $escape($sortByHeading['value']); ?>" <?php echo $selected; ?>><?php echo $sortByHeading['label']; ?></option>
-    <?php endforeach; ?>
-    </select>
-    <select name="sort_order" aria-label="<?php echo $translate('Sort order'); ?>">
-        <option value="asc" <?php echo ($sortOrderQuery === 'asc') ? 'selected' : ''; ?>><?php echo $translate('Ascending'); ?></option>
-        <option value="desc" <?php echo ($sortOrderQuery === 'desc') ? 'selected' : ''; ?>><?php echo $translate('Descending'); ?></option>
-    </select>
-    <button type="submit" class="f-button"><?php echo $translate('Sort'); ?></button>
-</form>
+
+<div class="f-callout">
+
+    <form class="o-sorting" action="">
+
+        <div class="f-grid-x f-grid-padding-x">
+
+            <div class="f-cell f-small-5">
+
+                <?php echo $this->queryToHiddenInputs(['sort_by', 'sort_order']); ?>
+                <select name="sort_by" aria-label="<?php echo $translate('Sort by'); ?>">
+                <?php foreach($sortBy as $sortByHeading): ?>
+                    <?php $selected = ($sortByQuery === $sortByHeading['value']) ? 'selected' : ''; ?>
+                    <option value="<?php echo $escape($sortByHeading['value']); ?>" <?php echo $selected; ?>><?php echo $sortByHeading['label']; ?></option>
+                <?php endforeach; ?>
+                </select>
+
+            </div>
+
+            <div class="f-cell f-small-5">
+
+                <select name="sort_order" aria-label="<?php echo $translate('Sort order'); ?>">
+                    <option value="asc" <?php echo ($sortOrderQuery === 'asc') ? 'selected' : ''; ?>><?php echo $translate('Ascending'); ?></option>
+                    <option value="desc" <?php echo ($sortOrderQuery === 'desc') ? 'selected' : ''; ?>><?php echo $translate('Descending'); ?></option>
+                </select>
+
+            </div>
+
+            <div class="f-cell f-small-2">
+                <button type="submit" class="f-button t-sort-selector-button"><?php echo $translate('Sort'); ?></button>
+            </div>
+
+        </div>
+    </form>
+
+</div>

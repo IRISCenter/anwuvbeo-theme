@@ -46,7 +46,6 @@ $sortHeadings = [
         <?php echo $this->searchFilters(); ?>
 
         <div class="o-browse-controls">
-            <?php echo $this->pagination(); ?>
             <?php // echo $this->hyperlink($translate('Advanced search'), $this->url('site/resource', ['controller' => 'item', 'action' => 'search'], ['query' => $query], true), ['class' => 'advanced-search']); ?>
             <?php echo $this->sortSelector($sortHeadings); ?>
         </div>
@@ -54,7 +53,7 @@ $sortHeadings = [
 
 
         <?php $this->trigger('view.browse.before'); ?>
-        <ul class="o-resource-list f-grid-x f-grid-margin-x">
+        <div class="o-resource-list f-grid-x f-grid-padding-x">
         <?php
         $headingTerm = $this->siteSetting('browse_heading_property_term');
         $bodyTerm = $this->siteSetting('browse_body_property_term');
@@ -62,17 +61,21 @@ $sortHeadings = [
             $heading = $headingTerm ? $item->value($headingTerm, ['default' => $translate('[Untitled]')]) : $item->displayTitle();
             $body = $bodyTerm ? $item->value($bodyTerm) : $item->displayDescription();
         ?>
-            <li class="o-item o-resource f-cell f-small-6 f-medium-4 f-large-3">
-                <?php if ($itemThumbnail = $this->thumbnail($item, 'medium')): ?>
-                <?php echo $item->linkRaw($itemThumbnail); ?>
-                <?php endif; ?>
-                <h4><?php echo $item->link($heading); ?></h4>
-                <?php if ($body): ?>
-                <div class="o-description"><?php echo $escape($body); ?></div>
-                <?php endif; ?>
-            </li>
+            <div class="o-item o-resource f-cell f-small-6 f-medium-4 f-large-3">
+                <div class="f-card">
+                    <div class="f-card-section">
+                        <?php if ($itemThumbnail = $this->thumbnail($item, 'medium')): ?>
+                        <?php echo $item->linkRaw($itemThumbnail); ?>
+                        <?php endif; ?>
+                        <h4><?php echo $item->link($heading); ?></h4>
+                        <?php if ($body): ?>
+                        <div class="o-description"><?php echo $escape($body); ?></div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </div>
         <?php endforeach; ?>
-        </ul>
+        </div>
         <?php echo ($itemSetShow) ? '</div>' : ''; ?>
         <?php $this->trigger('view.browse.after'); ?>
         <?php echo $this->pagination(); ?>

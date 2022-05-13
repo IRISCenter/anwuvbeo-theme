@@ -19,53 +19,81 @@ $itemMedia = $item->media();
             TODO: Handle multiple media items.
         <?php endif; ?>
 
-        <h2><?php echo $translate('Item details'); ?></h2>
+        <div class="f-callout">
 
-        <?php $this->trigger('view.show.before'); ?>
+            <h2><?php echo $translate('Item details'); ?></h2>
 
-        <dl class="o-property-list o-item-property-list t-two-column-list">
+            <?php $this->trigger('view.show.before'); ?>
 
-            <div class="t-dl-def">
-                <dt>Subject <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-subject-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="t-subject-property"><?php echo $item->value('dcterms:subject'); ?></dd>
-            </div>
+            <dl class="o-property-list o-item-property-list t-two-column-list">
 
-            <div class="t-dl-def">
-                <dt>Type <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-type-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="t-type-property"><?php echo $item->value('dcterms:type'); ?></dd>
-            </div>
+                <div class="t-dl-def f-card">
+                    <div class="f-card-section">
+                        <div class="f-float-right"><button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target=".t-subject-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></div>
+                        <dt>Subject</dt>
+                        <dd class="t-subject-property"><?php echo $item->value('dcterms:subject'); ?></dd>
+                    </div>
+                </div>
 
-            <div class="t-dl-def">
-                <dt>Format <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-format-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="t-format-property"><?php echo $item->value('dcterms:format'); ?></dd>
-            </div>
+                <div class="t-dl-def f-card">
+                    <div class="f-card-section">
+                    <div class="f-float-right"><button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target=".t-type-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></div>
+                        <dt>Type</dt>
+                        <dd class="t-type-property"><?php echo $item->value('dcterms:type'); ?></dd>
+                    </div>
+                </div>
 
-            <div class="t-dl-def">
-                <dt>Language <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-language-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="t-language-property"><?php echo $item->value('dcterms:language'); ?></dd>
-            </div>
+                <div class="t-dl-def f-card">
+                    <div class="f-card-section">
+                    <div class="f-float-right"><button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target=".t-format-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></div>
+                        <dt>Format</dt>
+                        <dd class="t-format-property"><?php echo $item->value('dcterms:format'); ?></dd>
+                    </div>
+                </div>
 
-            <div class="t-dl-def">
-                <dt>Coverage <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-coverage-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="t-coverage-property"><?php echo $item->value('dcterms:coverage'); ?></dd>
-            </div>
+                <div class="t-dl-def f-card">
+                    <div class="f-card-section">
+                    <div class="f-float-right"><button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target=".t-language-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></div>
+                        <dt>Language</dt>
+                        <dd class="t-language-property"><?php echo $item->value('dcterms:language'); ?></dd>
+                    </div>
+                </div>
 
-            <div class="t-dl-def">
-                <dt>Creator <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-creator-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="t-creator-property"><?php echo $item->value('dcterms:creator'); ?></dd>
-            </div>
+                <div class="t-dl-def f-card">
+                    <div class="f-card-section">
+                    <div class="f-float-right"><button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target=".t-coverage-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></div>
+                        <dt>Coverage</dt>
+                        <dd class="t-coverage-property"><?php echo $item->value('dcterms:coverage'); ?></dd>
+                    </div>
+                </div>
 
-            <div class="t-dl-def">
-                <dt>Rights <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-rights-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="t-rights-property"><?php echo $item->value('dcterms:rights'); ?></dd>
-            </div>
+                <div class="t-dl-def f-card">
+                    <div class="f-card-section">
+                    <div class="f-float-right"><button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target=".t-creator-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></div>
+                        <dt>Creator</dt>
+                        <dd class="t-creator-property"><?php echo $item->value('dcterms:creator'); ?></dd>
+                    </div>
+                </div>
 
-            <div class="t-dl-def">
-                <dt>Contributor <button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target="t-contributor-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></dt>
-                <dd class="t-contributor-property"><?php echo $item->value('dcterms:contributor'); ?></dd>
-            </div>
+                <div class="t-dl-def f-card">
+                    <div class="f-card-section">
+                    <div class="f-float-right"><button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target=".t-rights-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></div>
+                        <dt>Rights</dt>
+                        <dd class="t-rights-property"><?php echo $item->value('dcterms:rights'); ?></dd>
+                    </div>
+                </div>
 
-        </dl>
+                <div class="t-dl-def f-card">
+                    <div class="f-card-section">
+                    <div class="f-float-right"><button type="button" class="f-button f-tiny f-hollow t-copy-button" data-clipboard-target=".t-contributor-property"><img src="<?php print($this->assetUrl('image/icon/clipboard-dark-violet.svg')); ?>" /> Copy</button></div>
+                        <dt>Contributor</dt>
+                        <dd class="t-contributor-property"><?php echo $item->value('dcterms:contributor'); ?></dd>
+                    </div>
+                </div>
+
+            </dl>
+
+        </div>
 
         <div class="o-property">
             <?php $itemSets = $item->itemSets(); ?>
@@ -111,37 +139,53 @@ $itemMedia = $item->media();
 
         <?php if ($itemMedia[0]->mediaType() == 'application/pdf'): ?>
 
-        <div class='t-item-preview t-document-item-preview'>
-            <?php echo $this->thumbnail($item, 'large', ['alt' => 'An image of the item.']); ?>
-        </div>
+            <div class='t-item-preview t-document-item-preview'>
+                <?php echo $this->thumbnail($item, 'large', ['alt' => 'An image of the item.']); ?>
+            </div>
 
         <?php elseif ($itemMedia[0]->mediaType() == 'image/jpeg'): ?>
 
-        <div class='t-item-preview t-image-item-preview'>
+            <div class='t-item-preview t-image-item-preview'>
 
-            <?php
-                // var_dump($itemMedia[0]->id());
-                $itemMediaID = $itemMedia[0]->id();
-                $itemMediaOriginalDimensions = $itemMedia[0]->mediaData()['dimensions']['original'];
-                if ($itemMediaOriginalDimensions['height'] < $itemMediaOriginalDimensions['width']):
-                    $itemMediaPreviewURL = 'https://edoid.danielflaum.net/iiif/' . $itemMediaID . '/square/^800,/0/default.jpg';
-            ?>
+                <?php
+                    // var_dump($itemMedia[0]->mediaData());
+                    $itemMediaID = $itemMedia[0]->id();
+                    $itemMediaOriginalDimensions = $itemMedia[0]->mediaData()['dimensions']['original'];
+                    if ($itemMediaOriginalDimensions['height'] < $itemMediaOriginalDimensions['width']):
+                        $itemMediaPreviewURL = 'https://edoid.danielflaum.net/iiif/' . $itemMediaID . '/square/^800,/0/default.jpg';
+                ?>
 
-            <span class="t-cropped-preview-notice">Cropped preview</span>
-            <img src="<?php print($itemMediaPreviewURL); ?>" />
+                <span class="t-cropped-preview-notice">Cropped preview</span>
+                <img src="<?php print($itemMediaPreviewURL); ?>" />
 
-            <?php
-                else:
-                    $itemMediaPreviewURL = 'https://edoid.danielflaum.net/iiif/' . $itemMediaID . '/full/^800,/0/default.jpg';
-            ?>
+                <?php
+                    else:
+                        $itemMediaPreviewURL = 'https://edoid.danielflaum.net/iiif/' . $itemMediaID . '/full/^800,/0/default.jpg';
+                ?>
 
-            <img src="<?php print($itemMediaPreviewURL); ?>" />
+                <img src="<?php print($itemMediaPreviewURL); ?>" />
 
-            <?php endif; ?>
+                <?php endif; ?>
 
-        </div>
+            </div>
+
+        <?php elseif ($itemMedia[0]->mediaType() == 'audio/mpeg'): ?>
+
+            <div class='t-item-preview t-sound-item-preview'>
+
+                <?php
+                    // echo json_encode($itemMedia[0]);
+                    $itemMediaURL = $itemMedia[0]->originalUrl();
+                ?>
+
+                <audio>
+                    <source src="<?php print($itemMediaURL) ?>">
+                </audio>
+
+            </div>
 
         <?php endif; ?>
+
 
     </div>
 

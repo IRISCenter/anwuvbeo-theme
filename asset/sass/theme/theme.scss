@@ -5,6 +5,14 @@ $schaefer-palette: (
     gold-yellow: #e29239,
 );
 
+/* @group Plyr */
+
+:root {
+    --plyr-color-main: #451d47;
+}
+
+/* @endgroup */
+
 dd {
     margin-bottom: 0.5rem;
 }
@@ -29,12 +37,24 @@ dd {
 
     @import "screen";
 
-    .o-item.o-resource.o-show .o-property-list .t-dl-def:hover {
+    .o-item.o-resource.o-show .o-property-list .t-dl-def {
 
-        background-color: rgba($color: #000000, $alpha: 0.1);
+        &:hover {
 
-        .t-copy-button {
-            visibility: visible;
+            background-color: rgba($color: #000000, $alpha: 0.1);
+
+            .t-copy-button {
+                visibility: visible;
+            }
+
+        }
+
+        dt {
+            font-weight: normal;
+        }
+
+        dd {
+            font-weight: bold;
         }
 
     }
@@ -57,9 +77,9 @@ dd {
 
     nav.f-pagination {
 
-        padding: 2em;
-
-        background-color: map-get($schaefer-palette, 'gold-yellow');
+        .f-cell {
+            text-align: center;
+        }
 
         input.f-page-input-top {
 
@@ -70,16 +90,21 @@ dd {
 
         form { display: inline-block; }
 
+        .t-row-count {
+            text-align: center;
+        }
+
     }
 
     form.o-sorting {
 
-        padding: 2em;
-
-        background-color: map-get($schaefer-palette, 'gold-yellow');
+        .t-sort-selector-button {
+            width: 100%;
+        }
 
     }
 
+    body.o-browse.o-item,
     body.o-browse.o-item-set {
 
         ul.o-resource-list {
@@ -92,8 +117,6 @@ dd {
 
                 display: inline-block;
                 padding: 1em;
-
-                background-color: map-get($schaefer-palette, 'gold-yellow');
 
             }
 

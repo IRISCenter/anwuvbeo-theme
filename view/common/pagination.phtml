@@ -1,32 +1,49 @@
 <?php
 $translate = $this->plugin('translate');
 ?>
-<nav class="f-pagination" role="navigation">
-<?php if ($totalCount): ?>
 
-    <?php if ($currentPage != 1): ?>
-    <?php echo $this->hyperlink('', $previousPageUrl, ['class' => 'f-previous o-icon-prev button', 'title' => $translate('Previous'), 'aria-label' => $translate('Previous')]); ?>
+<div class="f-callout">
+
+    <nav class="f-pagination" role="navigation">
+    <?php if ($totalCount): ?>
+
+        <div class="f-grid-x f-grid-padding-x">
+
+            <div class="f-cell f-small-4">
+
+                <?php if ($currentPage != 1): ?>
+                <span class="o-previous f-button"><?php echo $this->hyperlink($translate('Previous'), $previousPageUrl, ['class' => '', 'title' => $translate('Previous'), 'aria-label' => $translate('Previous')]); ?></span>
+                <?php endif; ?>
+
+            </div>
+
+            <div class="f-cell f-auto">
+
+                <form method="GET" action="">
+                    <?php echo $this->queryToHiddenInputs(['page']); ?>
+                    Page <input type="text" name="page" class="f-page-input-top" value="<?php echo $currentPage; ?>" size="4" <?php echo ($pageCount == 1) ? 'f-readonly' : ''; ?> aria-label="<?php echo $translate('Page'); ?>"> <span class="f-page-count"><?php echo sprintf($translate('of %s'), $pageCount); ?></span>
+                </form>
+
+            </div>
+
+            <div class="f-cell f-small-4">
+
+                <?php if ($currentPage < $pageCount): ?>
+                <span class="o-next f-button"><?php echo $this->hyperlink($translate('Next'), $nextPageUrl, ['class' => '', 'title' => $translate('Next'), 'aria-label' => $translate('Next')]); ?></span>
+                <?php endif; ?>
+
+            </div>
+
+        </div>
+
+        <?php
+        $from = $offset + 1;
+        $to = ($currentPage < $pageCount) ? $offset + $perPage : $totalCount;
+        ?>
+        <div class="t-row-count"><?php echo sprintf($translate('Displaying items %1$s–%2$s of %3$s'), $from, $to, $totalCount); ?></div>
     <?php else: ?>
-    <span class="f-previous o-icon-prev f-button f-inactive"></span>
+        <?php echo $translate('0 results'); ?>
     <?php endif; ?>
+    </nav>
 
-    <form method="GET" action="">
-        <?php echo $this->queryToHiddenInputs(['page']); ?>
-        Page <input type="text" name="page" class="f-page-input-top" value="<?php echo $currentPage; ?>" size="4" <?php echo ($pageCount == 1) ? 'f-readonly' : ''; ?> aria-label="<?php echo $translate('Page'); ?>"> <span class="f-page-count"><?php echo sprintf($translate('of %s'), $pageCount); ?></span>
-    </form>
-
-    <?php if ($currentPage < $pageCount): ?>
-    <?php echo $this->hyperlink('', $nextPageUrl, ['class' => 'f-next o-icon-next f-button', 'title' => $translate('Next'), 'aria-label' => $translate('Next')]); ?>
-    <?php else: ?>
-    <span class="f-next o-icon-next f-button f-inactive"></span>
-    <?php endif; ?>
-
-    <?php
-    $from = $offset + 1;
-    $to = ($currentPage < $pageCount) ? $offset + $perPage : $totalCount;
-    ?>
-    <span class="f-row-count"><?php echo sprintf($translate('%1$s–%2$s of %3$s'), $from, $to, $totalCount); ?></span>
-<?php else: ?>
-    <?php echo $translate('0 results'); ?>
-<?php endif; ?>
-</nav>
+</div>
